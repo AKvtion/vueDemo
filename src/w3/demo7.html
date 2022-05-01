@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组解构赋值</title>
+</head>
+<body>
+    <script>
+        //嵌套数组进行解构
+        let[foo,[[bar],baz]] =[1,[[2],3]];
+        console.log(foo);//1
+        console.log(bar);//2
+        console.log(baz);//3
+
+        let[x,y] = [1,2,3];
+        console.log(x);//1
+        console.log(y);//2
+
+
+        //no 属于解构不成功
+        let[yes,no] = ['yes'];
+        console.log(yes);
+        console.log(no);//undefind
+
+        //该例子属于不完全解构 也可以
+        let[q,w] = [1,2,3];
+        console.log(q);//1
+        console.log(w);//2
+        
+        let[a,[b],d] = [1,[2,3],4];
+        console.log(a);
+        console.log(b);
+        console.log(d);
+
+        let[foot = true] = [];
+        console.log(foot); //true
+
+
+        //null 是一个值,可以赋值过去
+        //undefind 不是值
+
+
+    </script>
+</body>
+</html>

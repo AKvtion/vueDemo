@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--箭头函数-->
+    <script>
+        /*
+        () => console.log("hello");
+       const Person = {
+           "username":'Mike',
+           'age':15,
+           'sayHello':function(){
+               let mythis = this
+                setInterval(function(){
+                    console.log("my name is "+mythis.username+" I'm "+mythis.age+" now");
+                },2000)
+           }
+       }
+       Person.sayHello();
+       */
+    //    function student(){
+    //     "username"='john',
+    //        'age'=19,
+    //        setInterval(() => {
+    //            console.log("我叫"+this)
+    //        })
+    //    }
+    /*
+    //箭头函数
+    let fun1 = () => {console.log('hello');}
+
+    //普通函数
+    function fun2(){
+        console.log('hello2')
+    }
+    fun1()
+    fun2()
+*/
+
+    //======1=======
+    let say = (a,b,c)=>{
+        console.log(a)
+        console.log(b)
+        console.log(c)
+    }
+    say(1,2,3)
+
+
+    //======2=======
+    let say2 = (a,b,c)=>{
+        return a+b+c
+    }
+    console.log(say2(1,2,3))
+
+    console.log("=====第三种方法=========")
+    //======3=======
+    let say3 = (a)=>{
+        console.log(a)
+    }
+    say3(3)
+
+    let say4 = () =>{
+        console.log("第四种方法 没有参数传递")
+    }
+    say4()
+    
+
+    const Person = {
+           "username":'Mike',
+           'age':15,
+           'sayHello':function(){
+                setInterval(  ()=>{
+                    console.log("my name is "+this.username+" I'm "+this.age+" now")
+                },5000)
+           }
+       }
+       Person.sayHello();
+
+       //...后面是变量的名字
+       let arrowfunc = (...fasxaq) => console.log(fasxaq.length)
+       arrowfunc(1,2,3,4,5,6,7)
+
+
+       //不能运用的场景
+       //因为函数写在了对象里  对象的括号不能封闭作用域的  而此时this还是指向全局对象
+       const Person2 = {
+           "username":'Mike',
+           'age':15,
+           'sayHello':()=>{
+                setInterval(  ()=>{
+                    console.log("my name is "+this.username+" I'm "+this.age+" now")
+                },5000)
+           }
+       }
+       Person2.sayHello();
+
+
+       //map
+       const myMap = new Map([
+           ['name','Aeli'],
+           ['title','student']
+       ])
+       myMap.set('friend',['Mike','John']).set('edit',6)
+       console.log(myMap.get('name'))
+       console.log(myMap)
+       console.log('myMap size is '+myMap.size)
+       console.log(myMap.delete('edit'))
+
+       
+
+
+
+    </script>
+</body>
+</html>

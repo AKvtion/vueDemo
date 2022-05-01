@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //在相同的作用域下不能声明相同的变量
+        function func(){
+            let a = 10;
+            var a = 20;
+        }
+
+        function func2(){
+            let a = 10;
+            let a = 20;
+        }
+
+        function func3(arg){
+            let arg; //在同一作用域下 实参与形参不能同名
+        }
+
+        function func4(arg){
+            {
+                let arg; //在不同作用域 实参与形参可以同名
+            }
+        }
+    </script>
+</body>
+</html>
